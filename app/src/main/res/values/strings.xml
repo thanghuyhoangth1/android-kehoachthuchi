@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KeHoachThuChi</string>
+    <string name="title_add">Add</string>
+    <string name="title_payment_log">Payment Log</string>
 </resources>
