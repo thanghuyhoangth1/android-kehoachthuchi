@@ -1,12 +1,15 @@
 package kehoachthuchi.hoang.com.kehoachthuchi.screen.paymentlog
 
-import android.os.Bundle
-import android.view.*
-import android.widget.Toast
+import android.support.v4.app.FragmentTransaction
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import kehoachthuchi.hoang.com.kehoachthuchi.BR
 import kehoachthuchi.hoang.com.kehoachthuchi.R
 import kehoachthuchi.hoang.com.kehoachthuchi.base.BaseFramgent
 import kehoachthuchi.hoang.com.kehoachthuchi.databinding.FragmentPaymentLogBinding
+import kehoachthuchi.hoang.com.kehoachthuchi.screen.main.MainActivity
+import kehoachthuchi.hoang.com.kehoachthuchi.screen.newpayment.NewPaymentFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class PaymentLogFragment() : BaseFramgent<FragmentPaymentLogBinding, PaymentLogViewModel>() {
@@ -34,8 +37,9 @@ class PaymentLogFragment() : BaseFramgent<FragmentPaymentLogBinding, PaymentLogV
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         super.onOptionsItemSelected(item)
+        val fe: FragmentTransaction? = fragmentManager?.beginTransaction()
         when (item?.itemId) {
-            R.id.item_add -> Toast.makeText(context, "Add roi ne", Toast.LENGTH_SHORT).show()
+            R.id.item_add -> NewPaymentFragment().show((activity as MainActivity).supportFragmentManager, "hihi")
         }
         return super.onOptionsItemSelected(item)
     }
